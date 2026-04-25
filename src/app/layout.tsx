@@ -4,8 +4,9 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "arka garai — Full-Stack Developer",
-  description: "Building scalable web apps and solving real-world problems with clean systems.",
+  title: "arka garai",
+  description:
+    "Building scalable web apps and solving real-world problems with clean systems.",
   keywords: ["developer", "full-stack", "web development", "software engineer"],
   authors: [{ name: "arka garai" }],
   icons: {
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "arka garai — Full-Stack Developer",
-    description: "Building scalable web apps and solving real-world problems with clean systems.",
+    description:
+      "Building scalable web apps and solving real-world problems with clean systems.",
     type: "website",
   },
 };
@@ -35,3 +37,4 @@ export default function RootLayout({
     </html>
   );
 }
+

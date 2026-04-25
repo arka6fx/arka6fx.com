@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Container } from "@/components/Container";
 
 const RESUME_ID = "1devzVtTnPaWYJoz10jt54U6vSGlJtGmi";
 const RESUME_EMBED = `https://docs.google.com/gview?url=https://drive.google.com/uc?export=download%26id=${RESUME_ID}&embedded=true`;
@@ -8,11 +7,11 @@ const RESUME_VIEW = `https://drive.google.com/file/d/${RESUME_ID}/view`;
 
 export default function ResumePage() {
   return (
-    <Container>
-      <section className="py-4 sm:py-6">
+    <div className="min-h-screen">
+      <section className="py-4 sm:py-6 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-2xl sm:text-3xl font-semibold mb-6">Resume</h1>
 
-        <div className="flex gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
           <Link
             href={RESUME_DOWNLOAD}
             target="_blank"
@@ -37,10 +36,15 @@ export default function ResumePage() {
           </Link>
         </div>
 
-        <div className="overflow-x-auto">
-          <div className="bg-[#0B0F19] p-4 sm:p-6 lg:p-8 rounded-xl">
-            <div className="relative bg-white rounded-lg overflow-hidden"
-                 style={{ aspectRatio: "1 / 1.414", width: "100%", maxWidth: "850px", minHeight: "1200px" }}>
+        <div className="px-2 sm:px-4 lg:px-6">
+          <div className="bg-[#0B0F19] p-3 sm:p-4 lg:p-6 rounded-xl mx-auto max-w-[1400px]">
+            <div className="relative bg-white rounded-lg overflow-hidden mx-auto
+                 w-full
+                 max-w-[900px] sm:max-w-[950px] lg:max-w-[1100px] xl:max-w-[1250px] 2xl:max-w-[1350px]
+                 aspect-[1/1.414]
+                 min-h-[500px] sm:min-h-[600px] lg:min-h-[950px] xl:min-h-[1050px] 2xl:min-h-[1150px]
+                 lg:scale-[1.02] xl:scale-[1.05]
+                 shadow-[0_10px_40px_rgba(0,0,0,0.4)]">
               <div className="absolute top-0 left-0 right-0 h-10 flex items-center justify-between px-4 bg-[#1E293B]/80 backdrop-blur-sm border-b border-divider z-10">
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1.5">
@@ -96,6 +100,6 @@ export default function ResumePage() {
           </Link>
         </p>
       </section>
-    </Container>
+    </div>
   );
 }
