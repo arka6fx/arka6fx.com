@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     icon: "/my_photo.webp",
   },
   openGraph: {
-    title: "arka garai — Full-Stack Developer",
+    title: "arka garai",
     description:
       "Building scalable web apps and solving real-world problems with clean systems.",
     type: "website",
@@ -37,4 +37,3 @@ export default function RootLayout({
     </html>
   );
 }
-
