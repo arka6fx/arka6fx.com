@@ -34,14 +34,14 @@ export default function ProjectsPage() {
               <div className="flex items-center justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <h2 className="text-lg sm:text-xl font-medium text-[#E6EDF3] group-hover:text-[#00BFFF] transition-colors duration-200">
+                    <h2 className="text-lg sm:text-xl font-medium text-foreground group-hover:text-accent transition-colors duration-200">
                       {project.name}
                     </h2>
-                    <span className="text-[#00BFFF] opacity-0 group-hover:opacity-100 transition-all duration-200">
+                    <span className="text-accent opacity-0 group-hover:opacity-100 transition-all duration-200">
                       ↗
                     </span>
                   </div>
-                  <p className="text-sm sm:text-base text-[#94A3B8] mt-2 max-w-xl leading-relaxed">
+                  <p className="text-sm sm:text-base text-secondary mt-2 max-w-xl leading-relaxed">
                     {project.description}
                   </p>
                 </div>

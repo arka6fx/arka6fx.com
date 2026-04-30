@@ -54,6 +54,7 @@ export function Navigation() {
   const [flashKey, setFlashKey] = useState<string | null>(null);
 
   useEffect(() => {
+    const clearFlash = () => setFlashKey(null);
     const handleKeydown = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (isInputTarget(e)) return;
@@ -66,7 +67,7 @@ export function Navigation() {
         const key = getKeyFromHref(path);
         if (key) {
           setFlashKey(key);
-          setTimeout(() => setFlashKey(null), 250);
+          setTimeout(clearFlash, 250);
         }
         router.push(path);
       }
@@ -85,11 +86,11 @@ export function Navigation() {
   };
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-center h-14 px-4 sm:px-5 bg-[rgba(11,15,25,0.85)] backdrop-blur-md border-b border-divider">
+    <header className="sticky top-2 sm:top-3 z-50 mx-auto flex w-[min(960px,calc(100%-0.75rem))] sm:w-[min(960px,calc(100%-1rem))] items-center justify-center h-14 px-2 sm:px-5 bg-surface/95 backdrop-blur-md border border-divider rounded-lg sm:rounded-xl shadow-[0_10px_30px_var(--shadow-color)]">
       <Link
         href="/"
         onClick={() => handleClick("/")}
-        className="absolute left-4 sm:left-5 font-mono text-xs sm:text-sm text-[#94A3B8] hover:!text-[#00BFFF] transition-colors duration-[180ms] hidden sm:block"
+        className="absolute left-4 sm:left-5 font-mono text-xs sm:text-sm text-secondary hover:text-accent transition-colors duration-[180ms] hidden sm:block"
       >
         ~/arka
       </Link>
@@ -104,7 +105,7 @@ export function Navigation() {
               onClick={() => handleClick(href)}
               className={`
                 px-2 py-2 text-sm transition-colors duration-[180ms]
-                ${isFlashing ? "!text-[#00BFFF]" : "text-[#E6EDF3] hover:!text-[#00BFFF]"}
+                ${isFlashing || pathname === href ? "!text-accent" : "text-foreground hover:!text-accent"}
               `}
             >
               <span className="font-mono text-xs">[{key}]</span> {label}
@@ -113,7 +114,7 @@ export function Navigation() {
         })}
       </nav>
 
-      <div className="absolute right-4 sm:right-5 hidden md:flex items-center gap-3 lg:gap-4">
+      <div className="absolute right-4 sm:right-5 hidden md:flex items-center gap-2 lg:gap-3">
         {socialLinks.map(({ label, href, icon }) => (
           <Link
             key={label}
@@ -121,7 +122,7 @@ export function Navigation() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="text-[#94A3B8] hover:!text-[#00BFFF] transition-colors duration-[180ms] p-2"
+            className="text-secondary hover:text-accent transition-colors duration-[180ms] p-2"
           >
             <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d={icon} />
@@ -130,7 +131,7 @@ export function Navigation() {
         ))}
       </div>
 
-      <nav className="absolute left-1/2 -translate-x-1/2 md:hidden flex items-center gap-4 sm:gap-5 py-2 overflow-x-auto max-w-full">
+      <nav className="absolute left-1/2 -translate-x-1/2 md:hidden flex items-center gap-1.5 py-2 overflow-x-auto max-w-[calc(100%-0.5rem)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {navItems.map(({ key, label, href }) => {
           const isFlashing = flashKey === key;
           return (
@@ -139,8 +140,8 @@ export function Navigation() {
               href={href}
               onClick={() => handleClick(href)}
               className={`
-                px-2 py-3 text-xs sm:text-sm transition-colors duration-[180ms] whitespace-nowrap min-h-[44px] flex items-center
-                ${isFlashing ? "!text-[#00BFFF]" : "text-[#E6EDF3] hover:!text-[#00BFFF]"}
+                px-1.5 py-3 text-[11px] sm:text-xs transition-colors duration-[180ms] whitespace-nowrap min-h-[44px] flex items-center
+                ${isFlashing || pathname === href ? "!text-accent" : "text-foreground hover:!text-accent"}
               `}
             >
               {label}

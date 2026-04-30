@@ -1,7 +1,29 @@
 import type { Metadata } from "next";
+import { Fraunces, JetBrains_Mono, Manrope, Style_Script } from "next/font/google";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
+
+const sans = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans-ui",
+});
+
+const display = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display-ui",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono-ui",
+});
+
+const signature = Style_Script({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-signature-ui",
+});
 
 export const metadata: Metadata = {
   title: "arka garai",
@@ -26,8 +48,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="min-h-screen flex flex-col antialiased bg-background text-foreground">
+    <html lang="en">
+      <body
+        className={`${sans.variable} ${display.variable} ${mono.variable} ${signature.variable} min-h-screen flex flex-col antialiased bg-background text-foreground`}
+      >
         <Navigation />
         <main className="flex-1 flex justify-center pt-2 md:pt-3">
           {children}
