@@ -66,29 +66,45 @@ export default function ContactPage() {
       return;
     }
 
-    const audioContext = new window.AudioContext();
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
+    const AudioContextClass =
+      window.AudioContext ||
+      (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
 
-    oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(880, audioContext.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(
-      1174.66,
-      audioContext.currentTime + 0.12,
-    );
+    if (!AudioContextClass) {
+      return;
+    }
 
-    gainNode.gain.setValueAtTime(0.0001, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.12, audioContext.currentTime + 0.02);
-    gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.15);
+    try {
+      const audioContext = new AudioContextClass();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
 
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
+      oscillator.type = "sine";
+      oscillator.frequency.setValueAtTime(880, audioContext.currentTime);
+      oscillator.frequency.exponentialRampToValueAtTime(
+        1174.66,
+        audioContext.currentTime + 0.12,
+      );
 
-    oscillator.start();
-    oscillator.stop(audioContext.currentTime + 0.16);
-    oscillator.onended = () => {
-      void audioContext.close();
-    };
+      gainNode.gain.setValueAtTime(0.0001, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.12, audioContext.currentTime + 0.02);
+      gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.15);
+
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+
+      if (audioContext.state === "suspended") {
+        void audioContext.resume();
+      }
+
+      oscillator.start();
+      oscillator.stop(audioContext.currentTime + 0.16);
+      oscillator.onended = () => {
+        void audioContext.close();
+      };
+    } catch {
+      return;
+    }
   };
 
   const markCopied = (value: string) => {

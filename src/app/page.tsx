@@ -103,7 +103,7 @@ export default function Home() {
             alt="GitHub contribution graph for arka6fx"
             width={1024}
             height={160}
-            className="w-full h-auto"
+            className="w-full h-auto [filter:brightness(0.78)_contrast(1.2)_saturate(1.18)]"
             unoptimized
           />
         </div>
