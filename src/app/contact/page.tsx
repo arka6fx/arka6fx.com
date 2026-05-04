@@ -12,12 +12,6 @@ const contacts = [
     copyable: true,
   },
   {
-    label: "alternate email",
-    value: "arkagarai292@gmail.com",
-    href: "mailto:arkagarai292@gmail.com",
-    copyable: true,
-  },
-  {
     label: "github",
     value: "github.com/arka6fx",
     href: "https://github.com/arka6fx",
@@ -68,7 +62,8 @@ export default function ContactPage() {
 
     const AudioContextClass =
       window.AudioContext ||
-      (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      (window as Window & { webkitAudioContext?: typeof AudioContext })
+        .webkitAudioContext;
 
     if (!AudioContextClass) {
       return;
@@ -87,8 +82,14 @@ export default function ContactPage() {
       );
 
       gainNode.gain.setValueAtTime(0.0001, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.12, audioContext.currentTime + 0.02);
-      gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.15);
+      gainNode.gain.exponentialRampToValueAtTime(
+        0.12,
+        audioContext.currentTime + 0.02,
+      );
+      gainNode.gain.exponentialRampToValueAtTime(
+        0.0001,
+        audioContext.currentTime + 0.15,
+      );
 
       oscillator.connect(gainNode);
       gainNode.connect(audioContext.destination);
@@ -140,7 +141,10 @@ export default function ContactPage() {
   return (
     <Container>
       <section className="py-4 sm:py-6 content-reveal">
-        <h1 className="text-2xl sm:text-3xl font-semibold mb-4 content-item" style={{ animationDelay: "40ms" }}>
+        <h1
+          className="text-2xl sm:text-3xl font-semibold mb-4 content-item"
+          style={{ animationDelay: "40ms" }}
+        >
           Contact
         </h1>
 
@@ -152,14 +156,19 @@ export default function ContactPage() {
           <span className="text-sm text-secondary">open to opportunities</span>
         </div>
 
-        <div className="space-y-4 max-w-lg content-item" style={{ animationDelay: "200ms" }}>
+        <div
+          className="space-y-4 max-w-lg content-item"
+          style={{ animationDelay: "200ms" }}
+        >
           {contacts.map((contact, index) => (
             <div
               key={contact.label}
               className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 stagger-row"
               style={{ animationDelay: `${280 + index * 70}ms` }}
             >
-              <span className="text-secondary w-28 shrink-0">{contact.label}:</span>
+              <span className="text-secondary w-28 shrink-0">
+                {contact.label}:
+              </span>
               <div className="flex items-center gap-2 flex-wrap">
                 <Link
                   href={contact.href}
@@ -178,14 +187,18 @@ export default function ContactPage() {
                   >
                     <span
                       className={`inline-block transition-transform duration-200 ${
-                        copied === contact.href ? "-translate-y-4 opacity-0" : "translate-y-0 opacity-100"
+                        copied === contact.href
+                          ? "-translate-y-4 opacity-0"
+                          : "translate-y-0 opacity-100"
                       }`}
                     >
                       copy
                     </span>
                     <span
                       className={`absolute inset-0 grid place-items-center transition-all duration-200 ${
-                        copied === contact.href ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                        copied === contact.href
+                          ? "translate-y-0 opacity-100"
+                          : "translate-y-4 opacity-0"
                       }`}
                     >
                       copied!
@@ -200,7 +213,10 @@ export default function ContactPage() {
           ))}
         </div>
 
-        <div className="mt-8 pt-6 border-t border-divider content-item" style={{ animationDelay: "760ms" }}>
+        <div
+          className="mt-8 pt-6 border-t border-divider content-item"
+          style={{ animationDelay: "760ms" }}
+        >
           <p className="text-secondary">
             Prefer direct email? Reach out at{" "}
             <Link
@@ -215,7 +231,9 @@ export default function ContactPage() {
 
       <div
         className={`fixed left-1/2 bottom-6 z-50 -translate-x-1/2 rounded-full border border-accent/25 bg-surface-strong/90 px-4 py-2 text-sm text-foreground shadow-[0_10px_30px_var(--shadow-color)] backdrop-blur-sm transition-all duration-250 ${
-          showToast ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
+          showToast
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-3 opacity-0"
         }`}
         aria-live="polite"
       >
