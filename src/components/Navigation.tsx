@@ -11,7 +11,6 @@ const navItems = [
   { key: "w", label: "work", href: "/work" },
   { key: "p", label: "projects", href: "/projects" },
   { key: "c", label: "contact", href: "/contact" },
-  { key: "r", label: "resume", href: "/resume" },
 ];
 
 const socialLinks = [
@@ -27,7 +26,6 @@ const keyToPath: Record<string, string> = {
   w: "/work",
   p: "/projects",
   c: "/contact",
-  r: "/resume",
 };
 
 function isInputTarget(e: KeyboardEvent): boolean {
