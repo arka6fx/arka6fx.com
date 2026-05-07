@@ -6,22 +6,22 @@ const projects = [
   {
     name: "Flowlist",
     description:
-      "A real-time productivity and task management system designed for speed and clarity. Features a dual-column task board, inline editing, and a lightweight completion metrics dashboard. Built and validated as an MVP with active users, focusing on responsive interactions and efficient state handling.",
+      "A task management app with a dual-column board, inline editing, and a metrics dashboard. Built as an MVP with active users.",
     link: "https://flow-list.vercel.app",
     github: "https://github.com/arka6fx/FlowList",
     stack: [
       "Next.js",
       "TypeScript",
-      "PostgreSQL",
-      "Prisma",
+      "Neon DB",
+      "Drizzle",
+      "Better Auth",
       "Tailwind",
-      "Vercel",
     ],
   },
   {
     name: "Auth Notes App",
     description:
-      "A secure notes application with authentication and protected APIs, enabling user-specific data storage and access. Implements token-based authentication and backend validation to ensure safe CRUD operations, making it suitable for rapid backend prototyping and secure data handling.",
+      "Secure notes app with token-based auth and protected CRUD APIs.",
     link: "https://github.com/arka6fx/vanilla-auth-notes-app",
     github: "https://github.com/arka6fx/vanilla-auth-notes-app",
     stack: ["Node.js", "Express", "JWT", "REST API", "Vanilla JS"],

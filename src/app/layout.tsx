@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Fraunces, JetBrains_Mono, Manrope, Style_Script } from "next/font/google";
+import { Fraunces, JetBrains_Mono, Caveat, Style_Script } from "next/font/google";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
-const sans = Manrope({
+const sans = Caveat({
   subsets: ["latin"],
   variable: "--font-sans-ui",
 });
 
-const display = Fraunces({
+const display = Caveat({
   subsets: ["latin"],
   variable: "--font-display-ui",
 });
