@@ -4,8 +4,7 @@ import { CalendarDate } from "@/components/CalendarDate";
 
 const blogs = [
   {
-    title: "Day I Switched to Omarchy + LazyVim",
-    description: "My minimal coding workflow using Omarchy, LazyVim, and tmux.",
+    title: "day i switched to omarchy + lazyvim",
     href: "https://smooth-barracuda-637.notion.site/Day-I-Switched-to-Omarchy-LazyVim-352561d525128099bf21e1fdfc18cd91",
     date: "2026-03-06",
   },
@@ -21,7 +20,6 @@ export default function BlogPage() {
             <Card
               key={blog.title}
               title={blog.title}
-              description={blog.description}
               href={blog.href}
               target="_blank"
             >

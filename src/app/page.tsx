@@ -2,6 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/Container";
 import { ProfileImage } from "@/components/ProfileImage";
+import { CalendarDate } from "@/components/CalendarDate";
+
+const blogs = [
+  {
+    title: "day i switched to omarchy + lazyvim",
+    href: "https://smooth-barracuda-637.notion.site/Day-I-Switched-to-Omarchy-LazyVim-352561d525128099bf21e1fdfc18cd91",
+    date: "2026-03-06",
+  },
+];
 
 const projects = [
   {
@@ -182,7 +191,50 @@ export default function Home() {
 
       <section
         className="py-4 sm:py-6 border-t border-divider content-item"
-        style={{ animationDelay: "680ms" }}
+        style={{ animationDelay: "540ms" }}
+      >
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
+          <h2 className="text-lg font-medium">Blogs</h2>
+          <Link
+            href="/blog"
+            className="text-foreground hover:text-accent transition-colors duration-150"
+          >
+            view all ↗
+          </Link>
+        </div>
+        <ul className="space-y-4">
+          {blogs.map((blog, index) => (
+            <li
+              key={blog.title}
+              className="stagger-row"
+              style={{ animationDelay: `${560 + index * 100}ms` }}
+            >
+              <article className="group rounded-none border border-accent/45 bg-gradient-to-br from-accent/10 via-surface-strong/85 to-surface/90 p-5 sm:p-6 shadow-[0_8px_30px_var(--shadow-color)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#76c893]/50 hover:shadow-[0_0_40px_rgba(118,200,147,0.15)]">
+                <div className="flex items-center gap-2">
+                  <Link
+                    href={blog.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors duration-200"
+                  >
+                    {blog.title}
+                  </Link>
+                  <span className="text-accent opacity-0 group-hover:opacity-100 transition-all duration-200">
+                    ↗
+                  </span>
+                </div>
+                <div className="mt-3">
+                  <CalendarDate date={blog.date} />
+                </div>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section
+        className="py-4 sm:py-6 border-t border-divider content-item"
+        style={{ animationDelay: "720ms" }}
       >
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
           <h2 className="text-lg font-medium">Contact</h2>

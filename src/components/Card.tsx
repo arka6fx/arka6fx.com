@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 interface CardProps {
   title: string;
-  description: string;
+  description?: string;
   href?: string;
   target?: "_blank";
   children?: ReactNode;
@@ -35,9 +35,11 @@ export function Card({ title, description, href, target, children, className }: 
         )}
       </div>
 
-      <p className="text-sm sm:text-base text-secondary mt-3 max-w-3xl leading-relaxed">
-        {description}
-      </p>
+      {description && (
+        <p className="text-sm sm:text-base text-secondary mt-3 max-w-3xl leading-relaxed">
+          {description}
+        </p>
+      )}
 
       {children && <div className="mt-4">{children}</div>}
     </article>
