@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/Container";
+import { ProfileImage } from "@/components/ProfileImage";
 
 const projects = [
   {
     name: "Flowlist",
     description:
-      "A task management app with a dual-column board, inline editing, and a metrics dashboard. Built as an MVP with active users.",
+      "A task management app with a dual-column board and inline editing. Built as an MVP with active users.",
     link: "https://flow-list.vercel.app",
     github: "https://github.com/arka6fx/FlowList",
     stack: [
@@ -37,13 +38,10 @@ export default function Home() {
             className="shrink-0 group hidden md:block content-item"
             style={{ animationDelay: "60ms" }}
           >
-            <Image
+            <ProfileImage
               src="/my_photo.webp"
               alt="arka garai"
-              width={120}
-              height={120}
-              className="w-[96px] h-[96px] lg:w-[120px] lg:h-[120px] rounded-xl object-cover border border-divider shadow-[0_8px_20px_rgba(0,0,0,0.4)] transition-transform duration-200 group-hover:scale-[1.02]"
-              priority
+              className="group-hover:scale-[1.02]"
             />
           </div>
 
@@ -55,26 +53,15 @@ export default function Home() {
               className="md:hidden mb-4 content-item"
               style={{ animationDelay: "80ms" }}
             >
-              <Image
+              <ProfileImage
                 src="/my_photo.webp"
                 alt="arka garai"
-                width={100}
-                height={100}
-                className="w-[80px] h-[80px] rounded-xl object-cover border border-divider shadow-[0_8px_20px_rgba(0,0,0,0.4)]"
-                priority
               />
             </div>
 
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-signature italic tracking-tight text-accent leading-[0.95]">
               arka garai
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-secondary mt-1">
-              Full-Stack Developer
-            </p>
-            <p className="text-sm sm:text-base md:text-lg text-secondary mt-3 max-w-xl leading-relaxed">
-              building scalable web apps and solving real-world problems with
-              clean systems
-            </p>
           </div>
         </div>
       </section>
@@ -85,9 +72,8 @@ export default function Home() {
       >
         <h2 className="text-lg font-medium mb-4">About</h2>
         <p className="text-base sm:text-lg text-secondary leading-relaxed max-w-xl">
-          I build full-stack applications end-to-end, with a focus on clean
-          architecture and performance. I work close to backend systems and
-          infrastructure, turning ideas into working products.
+          I build full-stack apps end-to-end with AI features. I focus on clean
+          architecture, performance, and scalable backend systems.
         </p>
       </section>
 

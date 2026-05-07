@@ -6,7 +6,7 @@ const projects = [
   {
     name: "Flowlist",
     description:
-      "A task management app with a dual-column board, inline editing, and a metrics dashboard. Built as an MVP with active users.",
+      "A task management app with a dual-column board and inline editing. Built as an MVP with active users.",
     link: "https://flow-list.vercel.app",
     github: "https://github.com/arka6fx/FlowList",
     stack: [
