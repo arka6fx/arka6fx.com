@@ -84,7 +84,7 @@ export function Navigation() {
   };
 
   return (
-    <header className="sticky top-2 sm:top-3 z-50 mx-auto flex w-[min(960px,calc(100%-0.75rem))] sm:w-[min(960px,calc(100%-1rem))] items-center justify-center h-14 px-2 sm:px-5 bg-surface/95 backdrop-blur-md border border-divider rounded-lg sm:rounded-xl shadow-[0_10px_30px_var(--shadow-color)]">
+    <header className="sticky top-2 sm:top-3 z-50 mx-auto flex w-[min(960px,calc(100%-0.75rem))] sm:w-[min(960px,calc(100%-1rem))] items-center justify-center h-14 px-2 sm:px-5 bg-surface/95 backdrop-blur-md border border-divider rounded-none shadow-[0_10px_30px_var(--shadow-color)]">
       <Link
         href="/"
         onClick={() => handleClick("/")}

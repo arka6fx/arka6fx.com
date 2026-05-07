@@ -47,7 +47,7 @@ export default function ProjectsPage() {
                 {project.stack.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-background/55 border border-divider px-2.5 py-1 text-xs text-secondary"
+                    className="rounded-sm border border-accent/50 px-2.5 py-1 text-xs text-secondary"
                   >
                     {tag}
                   </span>

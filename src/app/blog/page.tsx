@@ -16,7 +16,6 @@ export default function BlogPage() {
     <Container>
       <section className="py-4 sm:py-6">
         <h1 className="text-2xl sm:text-3xl font-semibold mb-6">Blogs</h1>
-
         <div className="space-y-4">
           {blogs.map((blog) => (
             <Card

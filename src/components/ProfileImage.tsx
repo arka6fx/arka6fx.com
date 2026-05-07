@@ -10,8 +10,8 @@ interface ProfileImageProps {
 }
 
 export function ProfileImage({ src, alt, className }: ProfileImageProps) {
-  const [currentSrc, setCurrentSrc] = useState(src);
-  const [isCat, setIsCat] = useState(false);
+  const [currentSrc, setCurrentSrc] = useState("/meow.jpg");
+  const [isCat, setIsCat] = useState(true);
 
   const handleToggle = () => {
     if (isCat) {
@@ -34,7 +34,7 @@ export function ProfileImage({ src, alt, className }: ProfileImageProps) {
         alt={alt}
         width={120}
         height={120}
-        className="w-[96px] h-[96px] lg:w-[120px] lg:h-[120px] rounded-xl object-cover border border-divider shadow-[0_8px_20px_rgba(0,0,0,0.4)]"
+        className="w-[96px] h-[96px] lg:w-[120px] lg:h-[120px] rounded-none object-cover border border-divider shadow-[0_8px_20px_rgba(0,0,0,0.4)]"
         priority
       />
     </button>

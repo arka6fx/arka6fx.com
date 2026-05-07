@@ -62,6 +62,9 @@ export default function Home() {
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-signature italic tracking-tight text-accent leading-[0.95]">
               arka garai
             </h1>
+            <p className="text-base sm:text-lg md:text-xl text-secondary mt-2">
+              building cool apps that actually make people happy :)
+            </p>
           </div>
         </div>
       </section>
@@ -95,11 +98,11 @@ export default function Home() {
 
         <div className="rounded-lg border border-divider bg-surface-strong/50 p-2 sm:p-4 overflow-hidden">
           <Image
-            src="https://ghchart.rshah.org/4e86ff/arka6fx"
+            src="https://ghchart.rshah.org/ff6b35/arka6fx"
             alt="GitHub contribution graph for arka6fx"
             width={1024}
             height={160}
-            className="w-full h-auto [filter:brightness(0.78)_contrast(1.2)_saturate(1.18)]"
+            className="w-full h-auto [filter:brightness(0.85)_contrast(1.35)_saturate(1.3)]"
             unoptimized
           />
         </div>
@@ -125,7 +128,7 @@ export default function Home() {
               className="stagger-row"
               style={{ animationDelay: `${420 + index * 100}ms` }}
             >
-              <article className="group rounded-2xl border border-accent/45 bg-gradient-to-br from-accent/10 via-surface-strong/85 to-surface/90 p-5 sm:p-6 shadow-[0_8px_30px_var(--shadow-color)] transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/75">
+              <article className="group rounded-none border border-accent/45 bg-gradient-to-br from-accent/10 via-surface-strong/85 to-surface/90 p-5 sm:p-6 shadow-[0_8px_30px_var(--shadow-color)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#76c893]/50 hover:shadow-[0_0_40px_rgba(118,200,147,0.15)]">
                 <div className="flex items-center gap-2">
                   <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors duration-200">
                     {project.name}
@@ -147,7 +150,7 @@ export default function Home() {
                   {project.stack.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-background/55 border border-divider px-2.5 py-1 text-xs text-secondary"
+                      className="rounded-sm border border-accent/50 px-2.5 py-1 text-xs text-secondary"
                     >
                       {tag}
                     </span>

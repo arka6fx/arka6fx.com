@@ -20,11 +20,11 @@ export function CalendarDate({ date }: CalendarDateProps) {
   const formattedDate = formatDate(date);
 
   return (
-    <span className="inline-flex items-center gap-2 rounded-md border border-blue-500/40 bg-blue-500/10 px-2.5 py-1 text-xs sm:text-sm text-blue-200">
+    <span className="inline-flex items-center gap-2 rounded-md border border-accent/40 bg-accent/10 px-2.5 py-1 text-xs sm:text-sm text-foreground">
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
-        className="h-3.5 w-3.5 text-blue-300"
+        className="h-3.5 w-3.5 text-accent"
         fill="none"
         stroke="currentColor"
         strokeWidth="1.8"
