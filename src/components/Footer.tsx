@@ -2,10 +2,8 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto border-t border-divider py-4">
-      <p className="text-sm text-secondary text-center">
-        © {year} arka garai
-      </p>
+    <footer className="border-divider mt-auto border-t py-4">
+      <p className="text-secondary text-center text-sm">© {year} arka garai</p>
     </footer>
   );
 }

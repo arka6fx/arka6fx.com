@@ -26,7 +26,7 @@ export function ProfileImage({ src, alt, className }: ProfileImageProps) {
   return (
     <button
       onClick={handleToggle}
-      className={`cursor-pointer bg-transparent p-0 border-0 ${className}`}
+      className={`cursor-pointer border-0 bg-transparent p-0 ${className}`}
       aria-label="Click to toggle cat"
     >
       <Image
@@ -34,7 +34,7 @@ export function ProfileImage({ src, alt, className }: ProfileImageProps) {
         alt={alt}
         width={120}
         height={120}
-        className="w-[96px] h-[96px] lg:w-[120px] lg:h-[120px] rounded-none object-cover border border-divider shadow-[0_8px_20px_rgba(0,0,0,0.4)]"
+        className="border-divider h-[96px] w-[96px] rounded-none border object-cover shadow-[0_8px_20px_rgba(0,0,0,0.4)] lg:h-[120px] lg:w-[120px]"
         priority
       />
     </button>

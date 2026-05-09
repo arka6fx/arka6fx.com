@@ -10,10 +10,10 @@ import { projects } from "@/data/projects";
 export default function Home() {
   return (
     <Container>
-      <section className="py-4 sm:py-6 content-reveal">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+      <section className="content-reveal py-4 sm:py-6">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:items-start md:gap-8">
           <div
-            className="shrink-0 group hidden md:block content-item"
+            className="group content-item hidden shrink-0 md:block"
             style={{ animationDelay: "60ms" }}
           >
             <ProfileImage
@@ -24,23 +24,20 @@ export default function Home() {
           </div>
 
           <div
-            className="flex flex-col items-center md:items-start text-center md:text-left content-item"
+            className="content-item flex flex-col items-center text-center md:items-start md:text-left"
             style={{ animationDelay: "140ms" }}
           >
             <div
-              className="md:hidden mb-4 content-item"
+              className="content-item mb-4 md:hidden"
               style={{ animationDelay: "80ms" }}
             >
-              <ProfileImage
-                src="/my_photo.webp"
-                alt="arka garai"
-              />
+              <ProfileImage src="/my_photo.webp" alt="arka garai" />
             </div>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-signature italic tracking-tight text-accent leading-[0.95]">
+            <h1 className="font-signature text-accent text-4xl leading-[0.95] tracking-tight italic sm:text-6xl md:text-7xl lg:text-8xl">
               arka garai
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-secondary mt-2">
+            <p className="text-secondary mt-2 text-base sm:text-lg md:text-xl">
               building cool apps that actually make people happy :)
             </p>
           </div>
@@ -48,21 +45,21 @@ export default function Home() {
       </section>
 
       <section
-        className="py-4 sm:py-6 border-t border-divider content-item"
+        className="border-divider content-item border-t py-4 sm:py-6"
         style={{ animationDelay: "240ms" }}
       >
-        <h2 className="text-lg font-medium mb-4">About</h2>
-        <p className="text-base sm:text-lg text-secondary leading-relaxed max-w-xl">
+        <h2 className="mb-4 text-lg font-medium">About</h2>
+        <p className="text-secondary max-w-xl text-base leading-relaxed sm:text-lg">
           I build full-stack apps end-to-end with AI features. I focus on clean
           architecture, performance, and scalable backend systems.
         </p>
       </section>
 
       <section
-        className="py-4 sm:py-6 border-t border-divider content-item"
+        className="border-divider content-item border-t py-4 sm:py-6"
         style={{ animationDelay: "320ms" }}
       >
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 gap-2">
+        <div className="mb-4 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
           <h2 className="text-lg font-medium">GitHub Activity</h2>
           <a
             href="https://github.com/arka6fx"
@@ -74,23 +71,23 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="rounded-lg border border-divider bg-surface-strong/50 p-2 sm:p-4 overflow-hidden">
+        <div className="border-divider bg-surface-strong/50 overflow-hidden rounded-lg border p-2 sm:p-4">
           <Image
             src="https://ghchart.rshah.org/ff6b35/arka6fx"
             alt="GitHub contribution graph for arka6fx"
             width={1024}
             height={160}
-            className="w-full h-auto [filter:brightness(0.85)_contrast(1.35)_saturate(1.3)]"
+            className="h-auto w-full [filter:brightness(0.85)_contrast(1.35)_saturate(1.3)]"
             unoptimized
           />
         </div>
       </section>
 
       <section
-        className="py-4 sm:py-6 border-t border-divider content-item"
+        className="border-divider content-item border-t py-4 sm:py-6"
         style={{ animationDelay: "400ms" }}
       >
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
+        <div className="mb-6 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
           <h2 className="text-lg font-medium">Projects</h2>
           <Link
             href="/projects"
@@ -115,10 +112,10 @@ export default function Home() {
       </section>
 
       <section
-        className="py-4 sm:py-6 border-t border-divider content-item"
+        className="border-divider content-item border-t py-4 sm:py-6"
         style={{ animationDelay: "540ms" }}
       >
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
+        <div className="mb-6 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
           <h2 className="text-lg font-medium">Blogs</h2>
           <Link
             href="/blog"
@@ -141,10 +138,10 @@ export default function Home() {
       </section>
 
       <section
-        className="py-4 sm:py-6 border-t border-divider content-item"
+        className="border-divider content-item border-t py-4 sm:py-6"
         style={{ animationDelay: "720ms" }}
       >
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
+        <div className="mb-6 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
           <h2 className="text-lg font-medium">Contact</h2>
           <Link
             href="/contact"

@@ -78,17 +78,17 @@ export default function ContactPage() {
       oscillator.frequency.setValueAtTime(880, audioContext.currentTime);
       oscillator.frequency.exponentialRampToValueAtTime(
         1174.66,
-        audioContext.currentTime + 0.12,
+        audioContext.currentTime + 0.12
       );
 
       gainNode.gain.setValueAtTime(0.0001, audioContext.currentTime);
       gainNode.gain.exponentialRampToValueAtTime(
         0.12,
-        audioContext.currentTime + 0.02,
+        audioContext.currentTime + 0.02
       );
       gainNode.gain.exponentialRampToValueAtTime(
         0.0001,
-        audioContext.currentTime + 0.15,
+        audioContext.currentTime + 0.15
       );
 
       oscillator.connect(gainNode);
@@ -140,36 +140,36 @@ export default function ContactPage() {
 
   return (
     <Container>
-      <section className="py-4 sm:py-6 content-reveal">
+      <section className="content-reveal py-4 sm:py-6">
         <h1
-          className="text-2xl sm:text-3xl font-semibold mb-4 content-item"
+          className="content-item mb-4 text-2xl font-semibold sm:text-3xl"
           style={{ animationDelay: "40ms" }}
         >
           Contact
         </h1>
 
         <div
-          className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full mb-6 content-item"
+          className="bg-accent/10 border-accent/20 content-item mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1.5"
           style={{ animationDelay: "120ms" }}
         >
-          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          <span className="text-sm text-secondary">open to opportunities</span>
+          <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+          <span className="text-secondary text-sm">open to opportunities</span>
         </div>
 
         <div
-          className="space-y-4 max-w-lg content-item"
+          className="content-item max-w-lg space-y-4"
           style={{ animationDelay: "200ms" }}
         >
           {contacts.map((contact, index) => (
             <div
               key={contact.label}
-              className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 stagger-row"
+              className="stagger-row flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4"
               style={{ animationDelay: `${280 + index * 70}ms` }}
             >
               <span className="text-secondary w-28 shrink-0">
                 {contact.label}:
               </span>
-              <div className="flex items-center gap-2 flex-wrap">
+              <div className="flex flex-wrap items-center gap-2">
                 <Link
                   href={contact.href}
                   target="_blank"
@@ -182,7 +182,7 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={() => handleCopy(contact.href)}
-                    className="relative overflow-hidden font-mono text-xs px-2 py-1 bg-divider hover:bg-accent/20 rounded transition-all duration-200 min-h-[36px] active:scale-95"
+                    className="bg-divider hover:bg-accent/20 relative min-h-[36px] overflow-hidden rounded px-2 py-1 font-mono text-xs transition-all duration-200 active:scale-95"
                     aria-label={`Copy ${contact.value}`}
                   >
                     <span
@@ -204,7 +204,7 @@ export default function ContactPage() {
                       copied!
                     </span>
                     {copied === contact.href && (
-                      <span className="pointer-events-none absolute inset-0 rounded animate-ping bg-accent/20" />
+                      <span className="bg-accent/20 pointer-events-none absolute inset-0 animate-ping rounded" />
                     )}
                   </button>
                 )}
@@ -214,7 +214,7 @@ export default function ContactPage() {
         </div>
 
         <div
-          className="mt-8 pt-6 border-t border-divider content-item"
+          className="border-divider content-item mt-8 border-t pt-6"
           style={{ animationDelay: "760ms" }}
         >
           <p className="text-secondary">
@@ -230,7 +230,7 @@ export default function ContactPage() {
       </section>
 
       <div
-        className={`fixed left-1/2 bottom-6 z-50 -translate-x-1/2 rounded-full border border-accent/25 bg-surface-strong/90 px-4 py-2 text-sm text-foreground shadow-[0_10px_30px_var(--shadow-color)] backdrop-blur-sm transition-all duration-250 ${
+        className={`border-accent/25 bg-surface-strong/90 text-foreground fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full border px-4 py-2 text-sm shadow-[0_10px_30px_var(--shadow-color)] backdrop-blur-sm transition-all duration-250 ${
           showToast
             ? "translate-y-0 opacity-100"
             : "pointer-events-none translate-y-3 opacity-0"
