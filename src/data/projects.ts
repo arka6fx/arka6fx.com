@@ -5,7 +5,7 @@ export const projects = [
     name: "Flowlist",
     description:
       "A task management app with a dual-column board and inline editing. Built as an MVP with active users.",
-    link: "https://flow-list.vercel.app",
+    link: "https://flowlist.arka6fx.com/",
     github: "https://github.com/arka6fx/FlowList",
     stack: [
       "Next.js",
