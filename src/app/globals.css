@@ -23,8 +23,11 @@
   --color-surface-strong: var(--surface-strong);
   --font-sans: var(--font-sans-ui), "Avenir Next", "Segoe UI", sans-serif;
   --font-display: var(--font-display-ui), Georgia, serif;
-  --font-mono: var(--font-mono-ui), "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
-  --font-signature: var(--font-signature-ui), "Avenir Next", "Segoe UI", sans-serif;
+  --font-mono:
+    var(--font-mono-ui), "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+  --font-signature:
+    var(--font-signature-ui), "Avenir Next", "Segoe UI", sans-serif;
+  --max-width-content: 700px;
 }
 
 * {
@@ -41,7 +44,9 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background 260ms ease, color 220ms ease;
+  transition:
+    background 260ms ease,
+    color 220ms ease;
 }
 
 main {
@@ -95,16 +100,25 @@ a:active {
   color: inherit;
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4 {
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: var(--foreground);
 }
 
-.prose h1 { font-size: 2rem; }
-.prose h2 { font-size: 1.5rem; }
-.prose h3 { font-size: 1.25rem; }
+.prose h1 {
+  font-size: 2rem;
+}
+.prose h2 {
+  font-size: 1.5rem;
+}
+.prose h3 {
+  font-size: 1.25rem;
+}
 
 .prose p {
   margin-bottom: 1.25rem;
@@ -142,7 +156,8 @@ a:active {
   padding: 0;
 }
 
-.prose ul, .prose ol {
+.prose ul,
+.prose ol {
   margin: 1rem 0;
   padding-left: 1.5rem;
 }
@@ -178,8 +193,12 @@ a:active {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes contentReveal {

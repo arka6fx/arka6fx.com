@@ -1,3 +1,5 @@
+import type { Project } from "@/types";
+
 export const projects = [
   {
     name: "Flowlist",
@@ -22,4 +24,4 @@ export const projects = [
     github: "https://github.com/arka6fx/vanilla-auth-notes-app",
     stack: ["Node.js", "Express", "JWT", "REST API", "Vanilla JS"],
   },
-];
+] satisfies Project[];
