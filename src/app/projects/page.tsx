@@ -1,12 +1,19 @@
+import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Full-stack and AI projects built with Next.js, TypeScript, Node.js, and more.",
+};
 
 export default function ProjectsPage() {
   return (
     <Container>
       <section className="py-4 sm:py-6">
-        <h1 className="text-2xl sm:text-3xl font-semibold mb-6">Projects</h1>
+        <h1 className="mb-6 text-2xl font-semibold sm:text-3xl">Projects</h1>
 
         <ul className="space-y-4">
           {projects.map((project, index) => (

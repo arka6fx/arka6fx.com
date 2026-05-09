@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Fraunces, JetBrains_Mono, Manrope, Style_Script } from "next/font/google";
+import {
+  Fraunces,
+  JetBrains_Mono,
+  Manrope,
+  Style_Script,
+} from "next/font/google";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
@@ -26,11 +31,24 @@ const signature = Style_Script({
 });
 
 export const metadata: Metadata = {
-  title: "arka garai",
+  metadataBase: new URL("https://arka6fx.com"),
+  title: {
+    default: "Arka Garai - Full-Stack Developer",
+    template: "%s | Arka Garai",
+  },
   description:
-    "Building scalable web apps and solving real-world problems with clean systems.",
-  keywords: ["developer", "full-stack", "web development", "software engineer"],
-  authors: [{ name: "arka garai" }],
+    "I build full-stack apps end-to-end with AI features. Clean architecture, performance, and scalable backend systems. Next.js, TypeScript, Node.js.",
+  keywords: [
+    "full-stack developer",
+    "Next.js",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "AI features",
+    "web development",
+    "software engineer",
+  ],
+  authors: [{ name: "Arka Garai" }],
   icons: {
     icon: [
       { url: "/cat logo.jpg", sizes: "48x48" },
@@ -43,9 +61,11 @@ export const metadata: Metadata = {
     apple: "/cat logo.jpg",
   },
   openGraph: {
-    title: "arka garai",
+    title: "Arka Garai - Full-Stack Developer",
     description:
-      "Building scalable web apps and solving real-world problems with clean systems.",
+      "I build full-stack apps end-to-end with AI features. Clean architecture, performance, and scalable backend systems.",
+    url: "https://arka6fx.com",
+    siteName: "Arka Garai",
     type: "website",
   },
 };
@@ -58,10 +78,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sans.variable} ${display.variable} ${mono.variable} ${signature.variable} min-h-screen flex flex-col antialiased bg-background text-foreground`}
+        className={`${sans.variable} ${display.variable} ${mono.variable} ${signature.variable} bg-background text-foreground flex min-h-screen flex-col antialiased`}
       >
         <Navigation />
-        <main className="flex-1 flex justify-center pt-2 md:pt-3">
+        <main className="flex flex-1 justify-center pt-2 md:pt-3">
           {children}
         </main>
         <Footer />
