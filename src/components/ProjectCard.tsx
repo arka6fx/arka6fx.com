@@ -22,29 +22,29 @@ export function ProjectCard({
       className="stagger-row"
       style={{ animationDelay: `${animationDelay}ms` }}
     >
-      <article className="group rounded-none border border-accent/45 bg-gradient-to-br from-accent/10 via-surface-strong/85 to-surface/90 p-5 sm:p-6 shadow-[0_8px_30px_var(--shadow-color)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#76c893]/50 hover:shadow-[0_0_40px_rgba(118,200,147,0.15)]">
+      <article className="group border-accent/45 from-accent/10 via-surface-strong/85 to-surface/90 w-full rounded-none border bg-gradient-to-br p-5 shadow-[0_8px_30px_var(--shadow-color)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#76c893]/50 hover:shadow-[0_0_40px_rgba(118,200,147,0.15)] sm:p-6">
         <div className="flex items-center gap-2">
-          <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors duration-200">
+          <h3 className="text-foreground group-hover:text-accent text-xl font-semibold transition-colors duration-200">
             {name}
           </h3>
           <Link
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent opacity-0 group-hover:opacity-100 transition-all duration-200"
+            className="text-accent opacity-0 transition-all duration-200 group-hover:opacity-100"
             aria-label={`Open ${name}`}
           >
             ↗
           </Link>
         </div>
-        <p className="text-sm sm:text-base text-secondary mt-3 max-w-3xl leading-relaxed">
+        <p className="text-secondary mt-3 max-w-3xl text-sm leading-relaxed sm:text-base">
           {description}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {stack.map((tag) => (
             <span
               key={tag}
-              className="rounded-sm border border-accent/50 px-2.5 py-1 text-xs text-secondary"
+              className="border-accent/50 text-secondary rounded-sm border px-2.5 py-1 text-xs"
             >
               {tag}
             </span>
@@ -55,11 +55,11 @@ export function ProjectCard({
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-secondary hover:text-accent"
+            className="text-secondary hover:text-accent inline-flex items-center"
             aria-label={`View ${name} on GitHub`}
           >
             <svg
-              className="w-5 h-5"
+              className="h-5 w-5"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
