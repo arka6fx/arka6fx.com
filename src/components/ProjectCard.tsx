@@ -22,19 +22,21 @@ export function ProjectCard({
       className="stagger-row"
       style={{ animationDelay: `${animationDelay}ms` }}
     >
-      <article className="group border-accent/45 from-accent/10 via-surface-strong/85 to-surface/90 w-full rounded-none border bg-gradient-to-br p-5 shadow-[0_8px_30px_var(--shadow-color)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#76c893]/50 hover:shadow-[0_0_40px_rgba(118,200,147,0.15)] sm:p-6">
+      <article className="group border-accent/45 from-accent/10 via-surface-strong/85 to-surface/90 w-full rounded-none border bg-gradient-to-br p-5 shadow-[0_8px_30px_var(--shadow-color)] transition-all duration-200 active:-translate-y-0.5 hover:-translate-y-0.5 hover:border-[#76c893]/50 hover:shadow-[0_0_40px_rgba(118,200,147,0.15)] active:border-[#76c893]/50 active:shadow-[0_0_40px_rgba(118,200,147,0.15)] sm:p-6">
         <div className="flex items-center gap-2">
-          <h3 className="text-foreground group-hover:text-accent text-xl font-semibold transition-colors duration-200">
-            {name}
-          </h3>
           <Link
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent opacity-0 transition-all duration-200 group-hover:opacity-100"
+            className="group/link inline-flex items-center gap-2"
             aria-label={`Open ${name}`}
           >
-            ↗
+            <h3 className="text-foreground group-hover:text-accent text-lg font-semibold transition-colors duration-200 sm:text-xl">
+              {name}
+            </h3>
+            <span className="text-accent opacity-100 transition-all duration-200 sm:opacity-0 sm:group-hover:opacity-100 sm:group-hover/link:opacity-100">
+              ↗
+            </span>
           </Link>
         </div>
         <p className="text-secondary mt-3 max-w-3xl text-sm leading-relaxed sm:text-base">
@@ -55,7 +57,7 @@ export function ProjectCard({
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-secondary hover:text-accent inline-flex items-center"
+            className="text-secondary hover:text-accent active:text-accent -m-2 inline-flex items-center p-2"
             aria-label={`View ${name} on GitHub`}
           >
             <svg
