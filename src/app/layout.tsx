@@ -33,7 +33,7 @@ const signature = Style_Script({
 export const metadata: Metadata = {
   metadataBase: new URL("https://arka6fx.com"),
   title: {
-    default: "Arka Garai - Full-Stack Developer",
+    default: "Arka Garai",
     template: "%s | Arka Garai",
   },
   description:
