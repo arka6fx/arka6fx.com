@@ -16,12 +16,4 @@ export const projects = [
       "Tailwind",
     ],
   },
-  {
-    name: "Auth Notes App",
-    description:
-      "Secure notes app with token-based auth and protected CRUD APIs.",
-    link: "https://github.com/arka6fx/vanilla-auth-notes-app",
-    github: "https://github.com/arka6fx/vanilla-auth-notes-app",
-    stack: ["Node.js", "Express", "JWT", "REST API", "Vanilla JS"],
-  },
 ] satisfies Project[];
