@@ -43,18 +43,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section
-        className="border-divider content-item border-t py-4 sm:py-6"
-        style={{ animationDelay: "240ms" }}
-      >
-        <h2 className="mb-4 text-lg font-medium">About</h2>
-        <p className="text-secondary max-w-xl text-base leading-relaxed sm:text-lg">
-          I build full-stack apps end-to-end with AI features. I focus on clean
-          architecture, performance, and scalable backend systems.
-        </p>
-      </section>
-
       <section
         className="border-divider content-item border-t py-4 sm:py-6"
         style={{ animationDelay: "320ms" }}
