@@ -1,7 +1,23 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+*.tsbuildinfo
+
+# opennext / cloudflare
 .open-next/
 .wrangler/
+
+# environment
+.env
+.env*.local
+.env.development
+.env.production
+
+# misc
 bun.lock
-node_modules/
-.next/
 ref/
 .opencode/node_modules/
+*.log
+.DS_Store
