@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     default: "Arka Garai",
     template: "%s | Arka Garai",
   },
+  icons: {
+    icon: "/meow.jpg",
+  },
   description:
     "I build full-stack apps end-to-end with AI features. Clean architecture, performance, and scalable backend systems.",
   openGraph: {
