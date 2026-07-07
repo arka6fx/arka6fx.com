@@ -1,0 +1,29 @@
+{
+  "allowedTools": [
+    "Bash(pnpm dev*)",
+    "Bash(pnpm build*)",
+    "Bash(pnpm lint*)",
+    "Bash(pnpm format*)",
+    "Bash(pnpm type-check*)",
+    "Bash(pnpm preview*)",
+    "Bash(pnpm deploy*)",
+    "Bash(pnpm cf-typegen*)",
+    "Bash(npx next *)",
+    "Bash(git status)",
+    "Bash(git diff*)",
+    "Bash(git log*)",
+    "Bash(git add *)",
+    "Bash(git commit*)",
+    "Bash(git checkout *)",
+    "Bash(git branch*)",
+    "Bash(wrangler *)"
+  ],
+  "ignorePatterns": [
+    "node_modules",
+    ".next",
+    ".open-next",
+    ".wrangler",
+    "dist",
+    "bun.lock"
+  ]
+}

@@ -4,3 +4,4 @@ bun.lock
 node_modules/
 .next/
 ref/
+.opencode/node_modules/
