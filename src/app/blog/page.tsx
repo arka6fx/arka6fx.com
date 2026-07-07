@@ -10,7 +10,7 @@ const posts = getPublishedPosts().sort(
 export default async function BlogPage() {
   return (
     <main className="animate-fade-in-up relative">
-      <h1 className="text-4xl font-bold mb-8 text-white">
+      <h1 className="text-2xl font-semibold mb-8 text-white">
         <span className="text-accent accent-glow mr-2">*</span>
         blog
       </h1>

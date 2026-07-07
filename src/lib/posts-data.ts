@@ -1,28 +1,18 @@
 export interface RawPost {
-  slug: string;
-  content: string;
+  slug: string
+  content: string
 }
 
 const raw = `---
 title: "day i switched to omarchy + lazyvim"
 description: "My experience switching to Omarchy and LazyVim setup"
 date: "March 6, 2026"
+externalUrl: "https://app.notion.com/p/Day-I-Switched-to-Omarchy-LazyVim-352561d525128099bf21e1fdfc18cd91?source=copy_link"
 ---
 
-this is a placeholder for the blog post about switching to omarchy + lazyvim.
-
-the original content was hosted on notion. i'll be migrating it here soon.
-
-in the meantime, here are some things i've been thinking about:
-
-- why i switched from my previous editor setup
-- what omarchy brings to the table
-- configuring lazyvim to my liking
-- the plugins i can't live without
-
-more details coming soon.
-`;
+this post has been moved to notion. click the link to read it there.
+`
 
 export const postsData: RawPost[] = [
   { slug: "lazyvim-switch", content: raw },
-];
+]

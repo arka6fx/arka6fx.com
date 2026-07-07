@@ -1,10 +1,13 @@
+import { ScrambleText } from "./scramble-text"
+
 export function Header() {
   return (
     <header className="mb-16 space-y-4">
       <h1 className="text-5xl font-semibold tracking-tight text-white text-balance mb-4 animate-fade-in">
-        <span className="inline-block">
-          arka garai
-        </span>
+        <ScrambleText
+          text="arka garai"
+          className="inline-block"
+        />
       </h1>
       <p className="text-gray-500 animate-fade-in">
         building cool apps that actually make people happy :)

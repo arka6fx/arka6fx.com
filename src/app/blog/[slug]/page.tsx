@@ -1,10 +1,9 @@
 import type { Metadata } from "next"
-import { notFound } from "next/navigation"
+import { notFound, redirect } from "next/navigation"
 import Link from "next/link"
 import { getPostBySlug, getPublishedPosts } from "@/lib/blog"
 import { MDX } from "./mdx"
 import { CalendarDate } from "@/components/CalendarDate"
-import { formatDateLong } from "@/lib/utils"
 
 export async function generateStaticParams() {
   const posts = getPublishedPosts()
@@ -55,6 +54,10 @@ export default async function BlogPost({
   const post = getPostBySlug(slug)
 
   if (!post) notFound()
+
+  if (post.metadata.externalUrl) {
+    redirect(post.metadata.externalUrl)
+  }
 
   const readingTime = getReadingTime(post.content)
   const { prev, next } = getAdjacentPosts(slug)
