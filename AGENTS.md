@@ -12,7 +12,7 @@ Personal portfolio site for Arka Garai. Built with Next.js + Cloudflare.
 | Language   | TypeScript                    |
 | Styling    | Tailwind CSS v4               |
 | Hosting    | Cloudflare (OpenNext)         |
-| Package    | pnpm                          |
+| Package    | bun                            |
 | Lint/Fmt   | ESLint + Prettier             |
 
 ---
@@ -20,14 +20,14 @@ Personal portfolio site for Arka Garai. Built with Next.js + Cloudflare.
 ## Commands
 
 ```bash
-pnpm dev               # start dev server
-pnpm build             # production build
-pnpm lint              # run ESLint
-pnpm format            # format with Prettier
-pnpm type-check        # tsc --noEmit
-pnpm preview           # OpenNext Cloudflare preview
-pnpm deploy            # build + deploy to Cloudflare
-pnpm cf-typegen        # regenerate Cloudflare env types
+bun dev                # start dev server
+bun build              # production build
+bun lint               # run ESLint
+bun format             # format with Prettier
+bun type-check         # tsc --noEmit
+bun preview            # OpenNext Cloudflare preview
+bun deploy             # build + deploy to Cloudflare
+bun cf-typegen         # regenerate Cloudflare env types
 ```
 
 No test suite exists.
@@ -36,24 +36,22 @@ No test suite exists.
 
 ## Route structure (`src/app/`)
 
-| Route        | Description                                      |
-| ------------ | ------------------------------------------------ |
-| `/`          | Homepage — profile, projects, blog, contact      |
-| `/projects`  | Full projects list                               |
-| `/blog`      | Blog list — posts link to external Notion pages  |
-| `/blog/:slug`| Individual blog post                             |
-| `/work`      | Work experience (coming soon)                    |
-| `/contact`   | Contact links with copy-to-clipboard email       |
+| Route        | Description                                    |
+| ------------ | ---------------------------------------------- |
+| `/`          | Homepage — header, blog links, contact links   |
+| `/blog`      | Blog list                                      |
+| `/blog/:slug`| Individual blog post                           |
+| `/contact`   | Contact links with copy-to-clipboard email     |
 
 ---
 
 ## Architecture
 
-- **Data layer** (`src/data/`): Static arrays. Add content by editing these files — no CMS or database.
+- **Data layer** (`src/lib/`): Inline blog post data in `posts-data.ts`. Add content by editing this file — no CMS or database.
 - **Components** (`src/components/`): Shared UI
-- **Theming**: CSS variables in `globals.css`, bridged via `@theme inline`. Use semantic tokens (`text-foreground`, `text-secondary`, `text-accent`, `bg-surface`, `border-divider`). Accent: `#99d98c` (green).
-- **Fonts**: 4 Google Fonts as CSS vars — `--font-sans-ui` (Manrope), `--font-display-ui` (Fraunces), `--font-mono-ui` (JetBrains Mono), `--font-signature-ui` (Style Script). Tailwind classes: `font-sans`, `font-display`, `font-mono`, `font-signature`.
-- **Animations**: `content-reveal` (staggered fade-in), `scroll-reveal` (IntersectionObserver), `route-fade-in` (page transitions). All respect `prefers-reduced-motion`.
+- **Theming**: Tailwind CSS v4 with `@theme inline` in `globals.css`. Background: `#111`, foreground: `#d1d5db`, accent: `#ff6b35` (orange).
+- **Font**: JetBrains Mono via `next/font/google` — applied globally via `font-mono` on `<body>`. No other fonts.
+- **Animations**: `animate-fade-in-up` and `animate-fade-in`. Respect `prefers-reduced-motion`.
 - **SEO**: Per-page metadata exports; root layout uses `"%s | Arka Garai"` title template.
 - **Images**: External images need `remotePatterns` in `next.config.ts` allowlist.
 

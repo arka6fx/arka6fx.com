@@ -1,6 +1,5 @@
-import fs from "node:fs";
-import path from "node:path";
 import { z } from "zod";
+import { postsData } from "./posts-data";
 
 const metadataSchema = z.object({
   title: z.string(),
@@ -38,26 +37,17 @@ function parseFrontmatter(fileContent: string) {
   return { metadata: metadataSchema.parse(metadata), content };
 }
 
-function getMDXFiles(dir: string) {
-  return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
+function parseMDXFile(raw: { slug: string; content: string }) {
+  const { metadata, content } = parseFrontmatter(raw.content);
+  return { metadata, slug: raw.slug, content };
 }
 
-function readMDXFile(filePath: string) {
-  const rawContent = fs.readFileSync(filePath, "utf-8");
-  return parseFrontmatter(rawContent);
-}
-
-function getMDXData(dir: string) {
-  const mdxFiles = getMDXFiles(dir);
-  return mdxFiles.map((file) => {
-    const { metadata, content } = readMDXFile(path.join(dir, file));
-    const slug = path.basename(file, path.extname(file));
-    return { metadata, slug, content };
-  });
+function getMDXData() {
+  return postsData.map(parseMDXFile);
 }
 
 export function getPosts() {
-  return getMDXData(path.join(process.cwd(), "posts"));
+  return getMDXData();
 }
 
 export function getPublishedPosts() {

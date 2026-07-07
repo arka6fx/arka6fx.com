@@ -1,23 +1,20 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function NotFound() {
   return (
-    <div className="bg-background text-foreground flex min-h-screen items-center justify-center px-5">
-      <div className="text-center">
-        <p className="text-accent mb-4 font-mono text-xs">404</p>
-        <h1 className="mb-4 text-2xl font-semibold sm:text-3xl">
-          Page not found
-        </h1>
-        <p className="text-secondary mb-8">
-          The page you&apos;re looking for doesn&apos;t exist.
+    <div className="flex items-center justify-center">
+      <div className="space-y-6 text-center">
+        <p className="sm:hidden text-6xl font-bold text-accent">404</p>
+        <p className="text-gray-400">
+          looks like you&apos;ve wandered into uncharted territory
         </p>
         <Link
           href="/"
-          className="text-accent hover:text-hover inline-flex items-center gap-2 transition-colors"
+          className="inline-block text-gray-400 hover:text-accent transition-colors"
         >
-          ← back to home
+          return home
         </Link>
       </div>
     </div>
-  );
+  )
 }

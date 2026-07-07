@@ -7,9 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-pnpm dev        # start dev server
-pnpm build      # production build
-pnpm lint       # run ESLint
+bun dev         # start dev server
+bun build       # production build
+bun lint        # run ESLint
 ```
 
 No test suite exists in this project.
