@@ -1,59 +1,33 @@
 "use client"
-import { useState, useEffect, useCallback, useRef } from "react"
 
-const CHARS = "!<>-_\\/[]{}—=+*^?#"
+import { useScramble } from "use-scramble"
 
 export function ScrambleText({
   text,
-  className,
+  className = "",
+  speed = 0.5,
+  tick = 1,
+  step = 1,
+  scramble = 5,
+  seed = 3,
 }: {
   text: string
   className?: string
+  speed?: number
+  tick?: number
+  step?: number
+  scramble?: number
+  seed?: number
 }) {
-  const [displayText, setDisplayText] = useState(text)
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const { ref } = useScramble({
+    text,
+    speed,
+    tick,
+    step,
+    scramble,
+    seed,
+    overdrive: true,
+  })
 
-  const doScramble = useCallback(() => {
-    let iteration = 0
-    const maxIterations = text.length
-
-    if (intervalRef.current) clearInterval(intervalRef.current)
-
-    intervalRef.current = setInterval(() => {
-      setDisplayText(
-        text
-          .split("")
-          .map((char, index) => {
-            if (index < iteration) return char
-            if (char === " ") return " "
-            return CHARS[Math.floor(Math.random() * CHARS.length)]
-          })
-          .join("")
-      )
-      iteration++
-
-      if (iteration > maxIterations) {
-        if (intervalRef.current) clearInterval(intervalRef.current)
-        setDisplayText(text)
-      }
-    }, 50)
-  }, [text])
-
-  useEffect(() => {
-    const timer = setTimeout(doScramble, 300)
-    return () => {
-      clearTimeout(timer)
-      if (intervalRef.current) clearInterval(intervalRef.current)
-    }
-  }, [doScramble])
-
-  return (
-    <span
-      className={className}
-      onMouseEnter={doScramble}
-      role="text"
-    >
-      {displayText}
-    </span>
-  )
+  return <span ref={ref} className={className} />
 }

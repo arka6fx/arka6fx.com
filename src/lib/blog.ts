@@ -31,7 +31,7 @@ function parseFrontmatter(fileContent: string) {
   for (const line of metadataLines) {
     const [key, ...valueParts] = line.split(":")
     if (key && valueParts.length > 0) {
-      metadata[key.trim()] = valueParts.join(":").trim()
+      metadata[key.trim()] = valueParts.join(":").trim().replace(/^"|"$/g, "")
     }
   }
 
