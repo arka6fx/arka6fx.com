@@ -121,7 +121,7 @@ export default function ContactPage() {
       </h1>
 
       <div className="mb-6 inline-flex items-center gap-2 text-sm text-gray-500">
-        <span className="h-2 w-2 rounded-full bg-green-500" />
+        <span className="h-2 w-2 rounded-full bg-accent" />
         open to opportunities
       </div>
 
