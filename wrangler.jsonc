@@ -1,0 +1,15 @@
+{
+  "name": "arka6fx-com",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-07-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "arka6fx.com", "custom_domain": true },
+    { "pattern": "www.arka6fx.com", "custom_domain": true }
+  ]
+}

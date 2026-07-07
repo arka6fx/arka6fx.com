@@ -2,10 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/Container";
 import { ProfileImage } from "@/components/ProfileImage";
-import { ProjectCard } from "@/components/ProjectCard";
 import { BlogCard } from "@/components/BlogCard";
-import { blogs } from "@/data/blogs";
-import { projects } from "@/data/projects";
+import { getPublishedPosts } from "@/lib/blog";
 
 export default function Home() {
   return (
@@ -76,34 +74,6 @@ export default function Home() {
         style={{ animationDelay: "400ms" }}
       >
         <div className="mb-6 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
-          <h2 className="text-lg font-medium">Projects</h2>
-          <Link
-            href="/projects"
-            className="text-foreground hover:text-accent transition-colors duration-150"
-          >
-            view all ↗
-          </Link>
-        </div>
-        <ul className="space-y-4">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.name}
-              name={project.name}
-              description={project.description}
-              link={project.link}
-              github={project.github}
-              stack={project.stack}
-              animationDelay={420 + index * 100}
-            />
-          ))}
-        </ul>
-      </section>
-
-      <section
-        className="border-divider content-item border-t py-4 sm:py-6"
-        style={{ animationDelay: "540ms" }}
-      >
-        <div className="mb-6 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
           <h2 className="text-lg font-medium">Blogs</h2>
           <Link
             href="/blog"
@@ -113,13 +83,13 @@ export default function Home() {
           </Link>
         </div>
         <ul className="space-y-4">
-          {blogs.map((blog, index) => (
+          {getPublishedPosts().map((post, index) => (
             <BlogCard
-              key={blog.title}
-              title={blog.title}
-              href={blog.href}
-              date={blog.date}
-              animationDelay={560 + index * 100}
+              key={post.slug}
+              title={post.metadata.title}
+              href={`/blog/${post.slug}`}
+              date={post.metadata.date}
+              animationDelay={420 + index * 100}
             />
           ))}
         </ul>
@@ -127,7 +97,7 @@ export default function Home() {
 
       <section
         className="border-divider content-item border-t py-4 sm:py-6"
-        style={{ animationDelay: "720ms" }}
+        style={{ animationDelay: "540ms" }}
       >
         <div className="mb-6 flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
           <h2 className="text-lg font-medium">Contact</h2>

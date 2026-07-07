@@ -8,8 +8,6 @@ import { useEffect, useState } from "react";
 const navItems = [
   { key: "h", label: "home", href: "/" },
   { key: "b", label: "blogs", href: "/blog" },
-  { key: "w", label: "work", href: "/work" },
-  { key: "p", label: "projects", href: "/projects" },
   { key: "c", label: "contact", href: "/contact" },
 ];
 
@@ -39,8 +37,6 @@ const socialLinks = [
 const keyToPath: Record<string, string> = {
   h: "/",
   b: "/blog",
-  w: "/work",
-  p: "/projects",
   c: "/contact",
 };
 

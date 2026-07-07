@@ -51,14 +51,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Arka Garai" }],
   icons: {
     icon: [
-      { url: "/cat logo.jpg", sizes: "48x48" },
-      { url: "/cat logo.jpg", sizes: "64x64" },
-      { url: "/cat logo.jpg", sizes: "96x96" },
-      { url: "/cat logo.jpg", sizes: "128x128" },
-      { url: "/cat logo.jpg", sizes: "256x256" },
-      { url: "/cat logo.jpg", sizes: "512x512" },
+      { url: "/meow.jpg", sizes: "48x48" },
+      { url: "/meow.jpg", sizes: "64x64" },
+      { url: "/meow.jpg", sizes: "96x96" },
+      { url: "/meow.jpg", sizes: "128x128" },
+      { url: "/meow.jpg", sizes: "256x256" },
+      { url: "/meow.jpg", sizes: "512x512" },
     ],
-    apple: "/cat logo.jpg",
+    apple: "/meow.jpg",
   },
   openGraph: {
     title: "Arka Garai - Full-Stack Developer",
