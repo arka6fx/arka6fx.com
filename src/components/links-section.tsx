@@ -4,7 +4,7 @@ const links = [
   { title: "email", href: "mailto:contact.arkagarai@gmail.com" },
   { title: "github", href: "https://github.com/arka6fx" },
   { title: "linkedin", href: "https://linkedin.com/in/arka-garai" },
-  { title: "x.com", href: "https://x.com/arka6fx" },
+  { title: "x.com", href: "https://x.com/arka7sc" },
   { title: "youtube", href: "https://youtube.com/@arka6fx" },
 ]
 

@@ -22,8 +22,8 @@ const contacts = [
   },
   {
     label: "twitter / x",
-    value: "x.com/arka6fx",
-    href: "https://x.com/arka6fx",
+    value: "x.com/arka7sc",
+    href: "https://x.com/arka7sc",
   },
   {
     label: "instagram",
