@@ -12,6 +12,13 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Build/deploy artifacts, not source:
+    ".open-next/**",
+    ".wrangler/**",
+    // Reference site kept for inspiration, not part of this app:
+    "ref/**",
+    // Claude Code plugin skill templates, not site source:
+    ".agents/**",
   ]),
 ]);
 
