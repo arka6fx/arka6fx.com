@@ -12,7 +12,7 @@ export function LinksSection() {
   return (
     <section className="animate-fade-in-up mt-4 pt-10 pb-16 border-t border-neutral-800">
       <h2 className="text-2xl font-semibold mb-6 flex items-center text-white">
-        <span className="text-accent accent-glow mr-2">*</span> elsewhere
+        <span className="text-accent accent-glow mr-2">*</span> contact
       </h2>
       <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
         {links.map((link, index) => (
