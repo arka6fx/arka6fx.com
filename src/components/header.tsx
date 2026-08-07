@@ -1,18 +1,11 @@
-import Image from "next/image"
+import { AvatarSwap } from "./avatar-swap"
 import { ScrambleText } from "./scramble-text"
 
 export function Header() {
   return (
     <header className="mb-16 space-y-4">
       <div className="mb-4 flex items-center gap-4">
-        <Image
-          src="/my_photo.webp"
-          alt="arka garai"
-          width={64}
-          height={64}
-          className="rounded-full border border-neutral-800 object-cover animate-fade-in"
-          priority
-        />
+        <AvatarSwap />
         <h1 className="text-5xl font-semibold tracking-tight text-white text-balance animate-fade-in">
           <ScrambleText
             text="arka garai"

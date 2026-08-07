@@ -29,6 +29,9 @@ export function Navbar() {
         case "b":
           router.push("/blog")
           break
+        case "p":
+          router.push("/#projects")
+          break
         case "c":
           router.push("/contact")
           break
@@ -54,6 +57,12 @@ export function Navbar() {
           className="hover:text-accent transition-colors duration-200 py-2 px-1.5 sm:px-0 sm:py-0"
         >
           <span className="hidden sm:inline">[b] </span>blog
+        </Link>
+        <Link
+          href="/#projects"
+          className="hover:text-accent transition-colors duration-200 py-2 px-1.5 sm:px-0 sm:py-0"
+        >
+          <span className="hidden sm:inline">[p] </span>projects
         </Link>
         <Link
           href="/contact"

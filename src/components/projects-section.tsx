@@ -11,7 +11,10 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="animate-fade-in-up mt-4 pt-10 pb-16 border-t border-neutral-800">
+    <section
+      id="projects"
+      className="animate-fade-in-up mt-4 pt-10 pb-16 border-t border-neutral-800 scroll-mt-8"
+    >
       <h2 className="text-2xl font-semibold mb-6 flex items-center text-white">
         <span className="text-accent accent-glow mr-2">*</span> projects
       </h2>
