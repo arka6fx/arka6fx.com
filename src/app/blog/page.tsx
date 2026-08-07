@@ -1,4 +1,5 @@
 import { Posts } from "@/components/posts"
+import { ScrambleText } from "@/components/scramble-text"
 import { getPublishedPosts } from "@/lib/blog"
 import { Metadata } from "next"
 
@@ -12,7 +13,7 @@ export default async function BlogPage() {
     <main className="animate-fade-in-up relative">
       <h1 className="text-2xl font-semibold mb-8 text-white">
         <span className="text-accent accent-glow mr-2">*</span>
-        blog
+        <ScrambleText text="blog" className="inline-block" />
       </h1>
       <p className="hidden sm:block text-sm text-gray-400 mb-8">
         press{" "}

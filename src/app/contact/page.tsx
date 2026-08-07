@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { ScrambleText } from "@/components/scramble-text"
 
 const contacts = [
   {
@@ -38,7 +39,7 @@ export default function ContactPage() {
     <main className="animate-fade-in-up">
       <h1 className="mb-8 text-2xl font-semibold text-white">
         <span className="text-accent accent-glow mr-2">*</span>
-        contact
+        <ScrambleText text="contact" className="inline-block" />
       </h1>
 
       <div className="mb-6 inline-flex items-center gap-2 text-sm text-gray-500">
@@ -48,15 +49,18 @@ export default function ContactPage() {
 
       <div className="mb-8 space-y-3">
         {contacts.map((contact) => (
-          <div key={contact.label} className="flex items-center gap-4">
-            <span className="w-28 shrink-0 text-sm text-gray-500">
+          <div
+            key={contact.label}
+            className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4"
+          >
+            <span className="text-sm text-gray-500 sm:w-28 sm:shrink-0">
               {contact.label}:
             </span>
             <Link
               href={contact.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-gray-200 transition-colors duration-200 hover:text-accent"
+              className="text-sm text-gray-200 transition-colors duration-200 hover:text-accent break-all"
             >
               {contact.value} &rarr;
             </Link>

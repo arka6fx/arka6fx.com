@@ -4,9 +4,9 @@ import { ScrambleText } from "./scramble-text"
 export function Header() {
   return (
     <header className="mb-16 space-y-3">
-      <div className="mb-2 flex items-center gap-4">
+      <div className="mb-2 flex items-center gap-3 sm:gap-4">
         <AvatarSwap />
-        <h1 className="text-5xl font-semibold tracking-tight text-white text-balance animate-fade-in">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white text-balance animate-fade-in">
           <ScrambleText
             text="arka garai"
             className="inline-block"

@@ -4,13 +4,20 @@ import Image from "next/image"
 import { useState } from "react"
 
 // Hover the avatar, get a cat. That's the whole feature.
+// Gated to real hover-capable pointers — on touch, a tap fires mouseenter
+// with no matching mouseleave, so the cat would get stuck showing forever.
 export function AvatarSwap() {
   const [hovered, setHovered] = useState(false)
 
+  const handleEnter = () => {
+    if (!window.matchMedia("(hover: hover)").matches) return
+    setHovered(true)
+  }
+
   return (
     <div
-      className="relative h-24 w-24 shrink-0 animate-fade-in sm:h-28 sm:w-28"
-      onMouseEnter={() => setHovered(true)}
+      className="relative h-16 w-16 shrink-0 animate-fade-in sm:h-24 sm:w-24 md:h-28 md:w-28"
+      onMouseEnter={handleEnter}
       onMouseLeave={() => setHovered(false)}
     >
       <Image

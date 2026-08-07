@@ -4,6 +4,7 @@ import Link from "next/link"
 import { getPostBySlug, getPublishedPosts } from "@/lib/blog"
 import { MDX } from "./mdx"
 import { CalendarDate } from "@/components/CalendarDate"
+import { ScrambleText } from "@/components/scramble-text"
 
 export async function generateStaticParams() {
   const posts = getPublishedPosts()
@@ -90,7 +91,7 @@ export default async function BlogPost({
       </div>
       <h1 className="mb-4 text-2xl font-semibold text-white">
         <span className="text-accent accent-glow mr-2">*</span>
-        {post.metadata.title}
+        <ScrambleText text={post.metadata.title} className="inline-block" />
       </h1>
       <div className="mb-10 text-sm text-gray-500 flex items-center gap-2">
         <CalendarDate date={post.metadata.date} />

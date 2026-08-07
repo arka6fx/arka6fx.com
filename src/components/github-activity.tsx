@@ -7,7 +7,7 @@ export function GithubActivity() {
       <div className="overflow-x-auto rounded border border-neutral-800 bg-black/20 p-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://ghchart.rshah.org/3b82f6/arka6fx"
+          src="https://ghchart.rshah.org/e8b34d/arka6fx"
           alt="arka6fx's GitHub contribution graph"
           className="min-w-[640px]"
         />
