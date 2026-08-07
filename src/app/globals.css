@@ -9,7 +9,7 @@
 }
 
 :root {
-  --background: #111;
+  --background: #2e1e20;
   --foreground: #d1d5db;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 .prose pre {
-  @apply overflow-x-auto border border-neutral-800 bg-[#111] my-4 rounded-sm;
+  @apply overflow-x-auto border border-neutral-800 bg-[#2e1e20] my-4 rounded-sm;
 }
 
 .prose code:not(pre code) {

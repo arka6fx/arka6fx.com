@@ -1,14 +1,28 @@
+import Image from "next/image"
 import { ScrambleText } from "./scramble-text"
 
 export function Header() {
   return (
     <header className="mb-16 space-y-4">
-      <h1 className="text-5xl font-semibold tracking-tight text-white text-balance mb-4 animate-fade-in">
-        <ScrambleText
-          text="arka garai"
-          className="inline-block"
+      <div className="mb-4 flex items-center gap-4">
+        <Image
+          src="/my_photo.webp"
+          alt="arka garai"
+          width={64}
+          height={64}
+          className="rounded-full border border-neutral-800 object-cover animate-fade-in"
+          priority
         />
-      </h1>
+        <h1 className="text-5xl font-semibold tracking-tight text-white text-balance animate-fade-in">
+          <ScrambleText
+            text="arka garai"
+            className="inline-block"
+          />
+        </h1>
+      </div>
+      <p className="text-gray-500 animate-fade-in">
+        ai engineer and product builder
+      </p>
       <p className="text-gray-500 animate-fade-in">
         building cool apps that actually make people happy :)
       </p>
