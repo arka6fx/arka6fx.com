@@ -3,8 +3,8 @@ import { ScrambleText } from "./scramble-text"
 
 export function Header() {
   return (
-    <header className="mb-16 space-y-4">
-      <div className="mb-4 flex items-center gap-4">
+    <header className="mb-16 space-y-3">
+      <div className="mb-2 flex items-center gap-4">
         <AvatarSwap />
         <h1 className="text-5xl font-semibold tracking-tight text-white text-balance animate-fade-in">
           <ScrambleText
@@ -19,11 +19,11 @@ export function Header() {
       <p className="text-gray-500 animate-fade-in">
         building cool apps that actually make people happy :)
       </p>
-      <p className="text-pretty max-w-[52ch] animate-fade-in-up">
+      <blockquote className="text-pretty max-w-[52ch] animate-fade-in-up border-l-2 border-neutral-800 pl-4 text-gray-500">
         i&apos;m a developer who loves building full-stack web apps with AI
         features. clean architecture, performance, and scalable backend systems.
         next.js, typescript, node.js, and whatever else gets the job done.
-      </p>
+      </blockquote>
     </header>
   )
 }

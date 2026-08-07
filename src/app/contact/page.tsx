@@ -1,41 +1,35 @@
-import { HoverImageLink } from "@/components/hover-image-link"
+import Link from "next/link"
 
 const contacts = [
   {
     label: "email",
     value: "contact.arkagarai@gmail.com",
     href: "mailto:contact.arkagarai@gmail.com",
-    image: "/my_photo.webp",
   },
   {
     label: "github",
     value: "github.com/arka6fx",
     href: "https://github.com/arka6fx",
-    image: "/my_photo.webp",
   },
   {
     label: "linkedin",
     value: "linkedin.com/in/arka-garai",
     href: "https://linkedin.com/in/arka-garai",
-    image: "/my_photo.webp",
   },
   {
     label: "twitter / x",
     value: "x.com/arka7sc",
     href: "https://x.com/arka7sc",
-    image: "/my_photo.webp",
   },
   {
     label: "instagram",
     value: "instagram.com/arka6fx",
     href: "https://instagram.com/arka6fx",
-    image: "/my_photo.webp",
   },
   {
     label: "youtube",
     value: "youtube.com/@arka6fx",
     href: "https://youtube.com/@arka6fx",
-    image: "/my_photo.webp",
   },
 ]
 
@@ -58,15 +52,14 @@ export default function ContactPage() {
             <span className="w-28 shrink-0 text-sm text-gray-500">
               {contact.label}:
             </span>
-            <HoverImageLink
+            <Link
               href={contact.href}
-              image={contact.image}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-gray-200 transition-colors duration-200 hover:text-accent"
             >
               {contact.value} &rarr;
-            </HoverImageLink>
+            </Link>
           </div>
         ))}
       </div>
