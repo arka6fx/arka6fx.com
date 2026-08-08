@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
 
 const links = [
   { title: "email", href: "mailto:contact.arkagarai@gmail.com" },
@@ -11,9 +12,18 @@ const links = [
 export function LinksSection() {
   return (
     <section className="animate-fade-in-up mt-4 pt-10 pb-16 border-t border-neutral-800">
-      <h2 className="text-2xl font-semibold mb-6 flex items-center text-white">
-        <span className="text-accent accent-glow mr-2">*</span> contact
-      </h2>
+      <div className="flex items-baseline justify-between mb-6">
+        <h2 className="text-2xl font-semibold flex items-center text-white">
+          <span className="text-accent accent-glow mr-2">*</span> contact
+        </h2>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-1 text-sm text-accent hover:underline group"
+        >
+          all contacts{" "}
+          <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </Link>
+      </div>
       <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
         {links.map((link, index) => (
           <Link
