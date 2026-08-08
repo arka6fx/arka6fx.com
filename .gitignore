@@ -18,6 +18,7 @@ node_modules/
 # misc
 bun.lock
 ref/
+.agents/skills/
 .opencode/node_modules/
 *.log
 .DS_Store
