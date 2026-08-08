@@ -3,7 +3,6 @@
 
 @theme inline {
   --font-mono: var(--font-jetbrains-mono), monospace;
-  --font-caveat: var(--font-caveat), cursive;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: #e8b34d;
