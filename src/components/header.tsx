@@ -13,7 +13,7 @@ export function Header() {
           />
         </h1>
       </div>
-      <p className="text-gray-500 animate-fade-in">
+      <p className="text-accent animate-fade-in">
         ai engineer and product builder
       </p>
       <p className="text-gray-500 animate-fade-in">
