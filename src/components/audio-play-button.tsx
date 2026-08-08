@@ -23,7 +23,7 @@ export function AudioPlayButton() {
         type="button"
         onClick={toggle}
         aria-label={playing ? "Pause audio" : "Play audio"}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-800 text-accent transition-colors duration-200 hover:border-accent"
+        className="flex h-9 w-9 items-center justify-center text-accent transition-transform duration-200 hover:scale-110"
       >
         {playing ? (
           <Pause className="h-4 w-4" fill="currentColor" />
